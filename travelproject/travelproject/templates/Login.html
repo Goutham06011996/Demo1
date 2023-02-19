@@ -1,0 +1,45 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+<style>
+  .demo{position:absolute;
+  top:55%;left:46%;color:white;}
+</style>
+  <meta charset="UTF-8">
+
+  <title>Login</title>
+
+  <link rel="stylesheet" href="{% static 'css/reset.css' %}">
+
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" media="screen" type="text/css"/>
+
+</head>
+<body style="background-image:linear-gradient(to right, #0f0c29, #302b63, #24243e);">
+
+  <div class="wrap">
+		<div class="avatar">
+      <img src="{% static 'images/avatar.png' %}" alt="Avatar">
+		</div>
+	  <form action="" method="post">
+		{% csrf_token %}
+
+		<input type="text" name="username" placeholder="USERNAME"required>
+		<div class="bar">
+			<i></i>
+		</div>
+		<input type="password" name="password" placeholder="PASSWORD"required><br>
+		<button style="color:black;">Login</button>
+		</form>
+	</div>
+
+  <script src="{% static 'js/index.js' %}"></script>
+
+{% for msg in messages%}
+<div class="demo">
+<h3>{{msg}}</h3>
+{% endfor %}
+</div>
+</body>
+</html>
